@@ -1,0 +1,7 @@
+{
+  "name": "5app",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "node filter/__tests__/filter-payload.js"
+  }
+}

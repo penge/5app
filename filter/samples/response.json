@@ -1,0 +1,24 @@
+{
+  "response":[
+    {
+      "name":"Molly",
+      "count":12,
+      "thumbnail":"https://example.com/64x64.png"
+    },
+    {
+      "name":"Polly",
+      "count":4,
+      "thumbnail":"https://example.com/64x64.png"
+    },
+    {
+      "name":"Lucy",
+      "count":3,
+      "thumbnail":"https://example.com/96x96.png"
+    },
+    {
+      "name":"Yak",
+      "count":2,
+      "thumbnail":"https://example.com/64x64.png"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: 'AWS::Serverless-2016-10-31'
+Description: 'Creates POST /filter in API Gateway'
+Resources:
+  api:
+    Type: 'AWS::Serverless::Api'
+    Properties:
+      StageName: dev
+
+  filter:
+    Type: 'AWS::Serverless::Function'
+    Properties:
+      Handler: filter/index.handler
+      Runtime: nodejs8.10
+      Description: 'Filters request depending on greaterThanCount and findThumbnailFunction'
+      MemorySize: 256
+      Timeout: 15
+      Events:
+        LambdaMicroservice:
+          Type: Api
+          Properties:
+            RestApiId: !Ref 'api'
+            Path: /filter
+            Method: POST
+
+  filterPermission:
+    Type: 'AWS::Lambda::Permission'
+    Properties:
+      Action: 'lambda:InvokeFunction'
+      FunctionName:
+        'Fn::GetAtt':
+          - filter
+          - Arn
+      Principal: apigateway.amazonaws.com
+      SourceArn:
+        'Fn::Sub': 'arn:aws:execute-api:${AWS::Region}:${AWS::AccountId}:*/*/*/*'
