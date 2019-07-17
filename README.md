@@ -13,7 +13,7 @@ POST https://5mdnjubwya.execute-api.eu-west-2.amazonaws.com/dev/filter
 **Samples:**
 
 - [sample request](filter/samples/request.json)
-- [sample response](filter/samples/request.json)
+- [sample response](filter/samples/response.json)
 
 **Main file:**
 
@@ -45,7 +45,7 @@ An easy way to do is to create one dedicated EC2 instance.
 Use Nodejs with Express, copy the code, start the server.
 It is not the fastest or coolest way, though.
 
-I have put it to **API Gateway**, but decited not to use Serverless or
+I have put it to **API Gateway**, but decided not to use Serverless or
 maintain environments, none of that was needed.
 I also didn't use Express as it was not necessary or didn't use
 test library like AVA, Jest, or other.
